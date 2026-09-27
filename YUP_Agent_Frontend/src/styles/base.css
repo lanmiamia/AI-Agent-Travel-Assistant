@@ -1,0 +1,136 @@
+:root {
+  color: #18202a;
+  background: #f5f3ee;
+  font-family:
+    "Segoe UI",
+    "PingFang SC",
+    "Microsoft YaHei",
+    system-ui,
+    -apple-system,
+    sans-serif;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  --page-bg: #f5f3ee;
+  --surface: #ffffff;
+  --surface-soft: #f8f7f3;
+  --ink: #18202a;
+  --muted: #69727e;
+  --line: #dfe2df;
+  --line-strong: #cbd0cd;
+  --coral: #e35d49;
+  --coral-dark: #bc432f;
+  --coral-soft: #fff0eb;
+  --teal: #167d75;
+  --teal-dark: #0e625c;
+  --teal-soft: #e8f5f2;
+  --navy: #17324d;
+  --warning: #b96a1b;
+  --danger: #be3f3f;
+  --shadow-sm: 0 1px 2px rgba(24, 32, 42, 0.06);
+  --shadow-md: 0 16px 40px rgba(24, 32, 42, 0.09);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+  width: 100%;
+  min-width: 320px;
+  min-height: 100%;
+}
+
+body {
+  min-height: 100vh;
+  min-height: 100dvh;
+  margin: 0;
+  overflow-x: hidden;
+  background: var(--page-bg);
+}
+
+button,
+input,
+textarea {
+  color: inherit;
+  font: inherit;
+}
+
+button {
+  border: 0;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+button:focus-visible,
+a:focus-visible,
+textarea:focus-visible,
+input:focus-visible {
+  outline: 3px solid rgba(23, 125, 117, 0.24);
+  outline-offset: 2px;
+}
+
+::selection {
+  color: #ffffff;
+  background: #17324d;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #c8ceca;
+  border: 3px solid transparent;
+  border-radius: 999px;
+  background-clip: padding-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #aeb6b0;
+  border: 3px solid transparent;
+  background-clip: padding-box;
+}
+
+.page-enter-active,
+.page-leave-active {
+  transition:
+    opacity 180ms ease,
+    transform 180ms ease;
+}
+
+.page-enter-from {
+  opacity: 0;
+  transform: translateY(8px);
+}
+
+.page-leave-to {
+  opacity: 0;
+  transform: translateY(-4px);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}

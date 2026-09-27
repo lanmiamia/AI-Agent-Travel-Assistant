@@ -1,0 +1,46 @@
+spring:
+  application:
+    name: YUP_Agent
+  profiles:
+    active: local  # 补充加载application-local.yml配置文件,相同属性名会覆盖application.yml
+  ai:
+#    ollama:
+#      base-url: http://localhost:11434  # Ollama服务地址
+#      chat:
+#        model: gemma3:1b         # 使用的AI模型
+    vectorstore:
+      pgvector:
+      index-type: HNSW          # 索引类型
+      distance-type: COSINE_DISTANCE
+      dimensions: 1536          # 字段数量
+      max-document-batch-size: 10000 # Optional: Maximum number of documents per batch
+
+
+
+server:
+  port: 8123               # 服务监听的端口
+  servlet:
+    context-path: /api     # url网址前缀
+# springdoc-openapi接口文档配置
+springdoc:
+  swagger-ui:
+    path: /swagger-ui.html
+    tags-sorter: alpha
+    operations-sorter: alpha
+  api-docs:
+    path: /v3/api-docs
+  group-configs:
+    - group: 'default'
+      paths-to-match: '/**'
+      packages-to-scan: com.yupi.yup_agent.controller  # 扫描哪个包下的 Controller
+# knife4j的增强配置，不需要增强可以不配
+knife4j:
+  enable: true
+  setting:
+    language: zh_cn
+
+# 指定某个类单独的日志输出级别
+logging:
+  level:
+    org.springframework.ai.chat.client.advisor.SimpleLoggerAdvisor: debug
+

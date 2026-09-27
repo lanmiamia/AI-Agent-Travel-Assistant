@@ -1,0 +1,28 @@
+
+{
+  "mcpServers": {
+    "amap-maps": {
+      "command": "npx.cmd",
+      "args": [
+        "-y",
+        "@amap/amap-maps-mcp-server"
+      ],
+      "env": {
+        "AMAP_MAPS_API_KEY": "947935c2c5ba784add78157fe4d81453"
+      }
+    },
+    "YUP_MCP_Server_Image_Search": {
+      "command" : "java",
+      "args" : [
+        "-Dspring.ai.mcp.server.stdio=true",
+        "-Dspring.main.web-application-type=none",
+        "-Dlogging.pattern.console=",
+        "-jar",
+        "YUP_MCP_Server_Image_Search/target/YUP_MCP_Server_Image_Search-0.0.1-SNAPSHOT.jar"
+      ],
+      "env": {}
+    }
+  }
+}
+
+
